@@ -35,10 +35,10 @@
 
 ### Process States
 
-- **Running (R):** Process is executing on CPU  
+- **Running (R):** Process is executing on CPU (Active process) 
 - **Sleeping (S):** Waiting for I/O or resource  
 - **Stopped (T):** Process paused manually  
-- **Zombie (Z):** Process finished but not cleaned  
+- **Zombie (Z):** The process has terminated, but its entry in the process table still exists because its parent process has not yet read its exit status.  
 
 ---
 
