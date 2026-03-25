@@ -47,7 +47,13 @@
 - `curl http://example.com` → Test API/URL response  
 - `netstat -tulnp` → Show open ports  
 - `dig`   → to check dns info
-- `ss -tulnp` → Modern netstat alternative  
+- `ss -tulnp` → Modern netstat alternative 
+- `netstat -a` - Show listening tcp and udp ports and corresponding programs.
+- `traceroute` host - Traces network path
+- `wget url` - Download files from internet
+- `whois domain` - Displays whois information for domain
+- `host domain` - Displays DNS IP address for domain
+- `nslookup domain` - Display IP address of domain
 
 ---
 
