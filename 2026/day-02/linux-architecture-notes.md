@@ -47,6 +47,7 @@
 - `top` → Shows running processes (real-time monitoring)  
 - `htop` → Advanced process viewer (scrollable UI)  
 - `ps -a` → Display running processes  
+- `ps aux` → Detailed list of all running processes
 - `kill -9 PID` → Forcefully terminate a process  
 
 ---
