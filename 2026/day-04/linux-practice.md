@@ -27,7 +27,7 @@ Lists all running sshd processes, including the main listener and each active SS
 - 1172 → active user sessions (pts/0)
 
 **Output:**  
-![alt text](pgrep.png)
+![alt text](images/pgrep.png)
 
 ---
 
@@ -42,7 +42,7 @@ Shows detailed resource usage and ownership of SSH daemon and session processes.
 - Multiple sessions create multiple sshd processes (normal behavior)
 
 **Output:**  
-![alt text](grep.png)
+![alt text](images/grep.png)
 
 ---
 
@@ -60,7 +60,7 @@ Displays the health, uptime, and recent activity of the SSH service managed by s
 - Successful public key authentication  
 
 **Output:**  
-![alt text](systemctl.png)
+![alt text](images/systemctl.png)
 
 ---
 
@@ -75,7 +75,7 @@ Lists all currently running system services, confirming overall system health.
 - Instance is stable  
 
 **Output:**  
-![alt text](systemctl-list.png)
+![alt text](images/systemctl-list.png)
 
 ---
 
@@ -93,7 +93,7 @@ Shows the latest SSH service logs, including service startup and authentication 
 - Session creation events  
 
 **Output:**  
-![alt text](journalctl.png)
+![alt text](images/journalctl.png)
 
 ---
 
@@ -110,7 +110,7 @@ Displays the most recent authentication and authorization activity on the system
 - Logs show proper session open/close → clear audit trail  
 
 **Output:**  
-![alt text](tail.png)
+![alt text](images/tail.png)
 
 ---
 
