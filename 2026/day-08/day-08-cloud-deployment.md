@@ -58,6 +58,7 @@ Note:
 ![alt text](images/image-8.png)
 
 - Download Log File to Your Local Machine
+
 Command : `scp -i "Devops_practice1.pem" ubuntu@ec2-107-22-3-177.compute-1.amazonaws.com:/home/ubuntu/nginx-logs.txt C:\Users\Shubham\Desktop\Devops\TWS_Practice\90DaysOfDevOps\2026\day-08`
 ![alt text](images/image-9.png)
 
