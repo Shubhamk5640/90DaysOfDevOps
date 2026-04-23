@@ -93,19 +93,19 @@ Largest log file in /var/log
 
 Explanation : 
 du -sh
+
 du → disk usage
 s → summary only (one line per file/dir)
 h → human readable
 
 2>/dev/null
+
 2> → redirect error output
 /dev/null → throw it away
 
-sort -h
-sort output in human readeable format
+sort -h →  sort output in human readeable format
 
-tail -5
-show last five lines only
+tail -5 → show last five lines only
 
 ### Look at a config file in /etc
 `cat /etc/hostname`
