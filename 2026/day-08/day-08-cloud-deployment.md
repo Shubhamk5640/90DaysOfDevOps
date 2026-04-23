@@ -53,6 +53,7 @@ Note:
 ---
 
 ## Step 6 : Save logs to file
+
 - Command : `sudo journalctl -u nginx > nginx-logs.txt `
 ![alt text](images/image-8.png)
 
