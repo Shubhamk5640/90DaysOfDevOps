@@ -6,24 +6,24 @@
 
 ## Step 2 : Connect to EC2 instance using ssh.
 Command : `ssh -i "Devops_practice1.pem" ubuntu@ec2-107-22-3-177.compute-1.amazonaws.com`
-![alt text](image.png)
+![alt text](images/image.png)
 
 ---
 
 ## Step 3 : Install Nginx
 - Command : `sudo apt update`
-![alt text](image-1.png)
+![alt text](images/image-1.png)
 
 - Command : `sudo apt install nginx`
-![alt text](image-2.png)
+![alt text](images/image-2.png)
 
 - Command : `sudo systemctl status nginx`
-![alt text](image-3.png)
+![alt text](images/image-3.png)
 
 ---
 
 ## Step 4 : Configure security groups for web access. From the AWS console, go to the security group and add an inbound rule for port 80 (default for Nginx).
-![alt text](image-4.png)
+![alt text](images/image-4.png)
 
 - Testing web access
 Accessed the Nginx web server using: `http://107.22.3.177/`
@@ -39,25 +39,25 @@ Note:
 
 “Nginx is accessible over HTTP, confirming that port 80 is open and serving traffic successfully.”
 
-![alt text](image-5.png)
-![alt text](image-6.png)
+![alt text](images/image-5.png)
+![alt text](images/image-6.png)
 
 ---
 
 ## Step 5 : Check logs of nginx service
 
 - Command : `sudo journalctl -u nginx`
-![alt text](image-7.png)
+![alt text](images/image-7.png)
 
 ---
 
 ## Step 6 : Save logs to file
 - Command : `sudo journalctl -u nginx > nginx-logs.txt `
-![alt text](image-8.png)
+![alt text](images/image-8.png)
 
 - Download Log File to Your Local Machine
 Command : `scp -i "Devops_practice1.pem" ubuntu@ec2-107-22-3-177.compute-1.amazonaws.com:/home/ubuntu/nginx-logs.txt C:\Users\Shubham\Desktop\Devops\TWS_Practice\90DaysOfDevOps\2026\day-08`
-![alt text](image-9.png)
+![alt text](images/image-9.png)
 
 ---
 
