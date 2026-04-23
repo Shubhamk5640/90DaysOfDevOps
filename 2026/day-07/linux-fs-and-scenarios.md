@@ -86,7 +86,7 @@ This document covers important Linux directories along with commands, observatio
 
 ## 🔹 Hands-on Tasks
 
-# Find largest log files
+### Find largest log files
 Largest log file in /var/log
 `du -sh /var/log/* 2>/dev/null | sort -h | tail -5`
 
@@ -106,18 +106,18 @@ sort output in human readeable format
 tail -5
 show last five lines only
 
-# Look at a config file in /etc
+### Look at a config file in /etc
 `cat /etc/hostname`
 
-# Check your home directory
+### Check your home directory
 `ls -la`
 
 ![alt text](images/largestlog.png)
 
 
-## 🔹 Scenario-Based Practice
+# 🔹 Scenario-Based Practice
 
-# Scenario 1: Service Not Starting
+## Scenario 1: Service Not Starting
 A service called 'ssh' failed to start after a server reboot. What commands would you run to diagnose the issue? Write at least 3-4 commands in order.
 
 Step 1 : `systemctl status ssh`
@@ -130,7 +130,7 @@ Step 3 : `systemctl is-enabled ssh`
 Why : To check if service starts automatically on boot.
 
 
-# Scenario 2: High CPU Usage
+## Scenario 2: High CPU Usage
 
 Step 1 - run cmd top ,htop for checking which process taking max cpu %
 step 2 - sort the process which taking maximum cpu %
@@ -140,7 +140,7 @@ step 4 - if that process is not necessary , kill the process
 ![alt text](images/highcpu.png)
 
 
-# Scenario 3: Finding Service Logs
+## Scenario 3: Finding Service Logs
 
 A developer asks: "Where are the logs for the 'ssh' service?" The service is managed by systemd. What commands would you use?
 Step 1 : `systemctl status ssh`
@@ -153,7 +153,7 @@ Step 3 : `journalctl -u ssh -f`
 Why : Check logs real-time.
 
 
-# Scenario 4: File Permissions Issue
+## Scenario 4: File Permissions Issue
 
 A script at /home/user/backup.sh is not executing. When you run it: ./backup.sh You get: "Permission denied" What commands would you use to fix this?
 
