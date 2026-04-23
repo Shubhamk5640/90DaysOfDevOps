@@ -35,7 +35,7 @@
 ## Understand Permissions
 - Current permissions :
 
-   Devops.txt : -rw-rw-r--
+   devops.txt : -rw-rw-r--
 
 - → indicates it’s a regular file (not a directory or special file).
 - rw- → (user/owner) → read + write, no execute.
