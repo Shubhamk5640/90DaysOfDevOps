@@ -5,7 +5,7 @@
 ---
 
 ## Step 2 : Connect to EC2 instance using ssh.
-Command : `ssh -i "Devops_practice1.pem" ubuntu@ec2-107-22-3-177.compute-1.amazonaws.com`
+- Command : `ssh -i "Devops_practice1.pem" ubuntu@ec2-107-22-3-177.compute-1.amazonaws.com`
 ![alt text](images/image.png)
 
 ---
@@ -40,6 +40,7 @@ Note:
 “Nginx is accessible over HTTP, confirming that port 80 is open and serving traffic successfully.”
 
 ![alt text](images/image-5.png)
+
 ![alt text](images/image-6.png)
 
 ---
