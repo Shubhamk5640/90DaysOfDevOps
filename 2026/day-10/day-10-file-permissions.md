@@ -5,21 +5,29 @@
 - Create notes.txt with some content using cat or echo
 - Create script.sh using vim with content: echo "Hello DevOps"
 - Verify: ls -l to see permissions
+
 ![alt text](images/image.png)
 
 ---
 
 ## Read Files
 - Read notes.txt using cat
+
 ![alt text](images/image-1.png)
 
+
 - View script.sh in vim read-only mode - vim -R script.sh
+
 ![alt text](images/image-2.png)
 
+
 - Display first 5 lines of /etc/passwd using head
+
 ![alt text](images/image-3.png)
 
+
 - Display last 5 lines of /etc/passwd using tail
+
 ![alt text](images/image-4.png)
 
 ---
@@ -34,7 +42,8 @@ Devops.txt : -rw-rw-r--
 - rw- → (group) → read + write, no execute.
 - r-- → (others) → read only, no write or execute.
 
-- Same permissions applied to notes.txt and script.sh.
+- Same permissions applied to notes.txt and script.sh
+
 ![alt text](images/image-5.png)
 
 
@@ -42,15 +51,22 @@ Devops.txt : -rw-rw-r--
 
 ## Modify Permissions
 - Make script.sh executable → run it with ./script.sh
+
 ![alt text](images/image-6.png)
 
+
 - Set devops.txt to read-only (remove write for all)
+
 ![alt text](images/image-7.png)
 
+
 - Set notes.txt to 640 (owner: rw, group: r, others: none)
+
 ![alt text](images/image-8.png)
 
+
 - Create directory project/ with permissions 755
+
 ![alt text](images/image-9.png)
 
 ---
