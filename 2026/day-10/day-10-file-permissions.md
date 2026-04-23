@@ -35,7 +35,7 @@
 ## Understand Permissions
 - Current permissions :
 
-Devops.txt : -rw-rw-r--
+   Devops.txt : -rw-rw-r--
 
 - → indicates it’s a regular file (not a directory or special file).
 - rw- → (user/owner) → read + write, no execute.
@@ -82,7 +82,7 @@ Explanation : Writing to a read‑only file normally gives Permission denied. Wi
 
 - Try executing a file without execute permission
 
-Explanation :Executing a file without execute permission gives Permission denied. Even sudo cannot bypass this, because the shell requires the execute bit. However, you can still run the file by explicitly invoking the interpreter (e.g., bash script.sh or python3 script.py).
+Explanation : Executing a file without execute permission gives Permission denied. Even sudo cannot bypass this, because the shell requires the execute bit. However, you can still run the file by explicitly invoking the interpreter (e.g., bash script.sh or python3 script.py).
 
 ![alt text](images/image-12.png)
 
@@ -97,7 +97,7 @@ Explanation :Executing a file without execute permission gives Permission denied
 - cat /etc/passwd | head -5 - Prints first 5 lines of /etc/passwd.
 - cat /etc/passwd | tail -5 - Prints last 5 lines of /etc/passwd.
 - chmod +x fname - Adding executable permission for all(owner,group,others).
-- chmod -w fname - Removing write permission for all(owner,group,others).
+- chmod -w fname / chmod 444 fname - Removing write permission for all(owner,group,others).
 - mkdir -m 755 dname - Create directory with permissions(rwx,r-x,r-x).
 
 ---
