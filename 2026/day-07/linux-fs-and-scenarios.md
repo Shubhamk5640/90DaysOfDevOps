@@ -88,6 +88,7 @@ This document covers important Linux directories along with commands, observatio
 
 ### Find largest log files
 Largest log file in /var/log
+
 `du -sh /var/log/* 2>/dev/null | sort -h | tail -5`
 
 Explanation : 
@@ -114,28 +115,32 @@ show last five lines only
 
 ![alt text](images/largestlog.png)
 
+---
 
 # 🔹 Scenario-Based Practice
 
 ## Scenario 1: Service Not Starting
 A service called 'ssh' failed to start after a server reboot. What commands would you run to diagnose the issue? Write at least 3-4 commands in order.
 
-Step 1 : `systemctl status ssh`
-Why : Check if the service is running or failed or stopped.
+- Step 1 : `systemctl status ssh`
+  Why : Check if the service is running or failed or stopped.
 
-Step 2 : `journalctl -u ssh -n 50`
-Why : If service is failed check logs.
+- Step 2 : `journalctl -u ssh -n 50`
+  Why : If service is failed check logs.
 
-Step 3 : `systemctl is-enabled ssh`
-Why : To check if service starts automatically on boot.
+- Step 3 : `systemctl is-enabled ssh`
+  Why : To check if service starts automatically on boot.
 
 
 ## Scenario 2: High CPU Usage
 
-Step 1 - run cmd top ,htop for checking which process taking max cpu %
-step 2 - sort the process which taking maximum cpu %
-step 3 - mark a process id & monitor that process
-step 4 - if that process is not necessary , kill the process
+- Step 1 - run cmd top ,htop for checking which process taking max cpu %
+
+- Step 2 - sort the process which taking maximum cpu %
+
+- Step 3 - mark a process id & monitor that process
+
+- Step 4 - if that process is not necessary , kill the process
 
 ![alt text](images/highcpu.png)
 
@@ -143,28 +148,28 @@ step 4 - if that process is not necessary , kill the process
 ## Scenario 3: Finding Service Logs
 
 A developer asks: "Where are the logs for the 'ssh' service?" The service is managed by systemd. What commands would you use?
-Step 1 : `systemctl status ssh`
-Why : Check service status first.
+- Step 1 : `systemctl status ssh`
+  Why : Check service status first.
 
-Step 2 : `journalctl -u ssh -n 50`
-Why : Check last 50 lines of logs.
+- Step 2 : `journalctl -u ssh -n 50`
+  Why : Check last 50 lines of logs.
 
-Step 3 : `journalctl -u ssh -f`
-Why : Check logs real-time.
+- Step 3 : `journalctl -u ssh -f`
+  Why : Check logs real-time.
 
 
 ## Scenario 4: File Permissions Issue
 
 A script at /home/user/backup.sh is not executing. When you run it: ./backup.sh You get: "Permission denied" What commands would you use to fix this?
 
-Step 1 : `ls -l backup.sh`
-Why : Check current permissions of file. Look for: -rw-r--r-- (notice no 'x' = not executable).
+- Step 1 : `ls -l backup.sh`
+  Why : Check current permissions of file. Look for: -rw-r--r-- (notice no 'x' = not executable).
 
-Step 2 : `chmod +x backup.sh`
-Why : Add execute permission to file.
+- Step 2 : `chmod +x backup.sh`
+  Why : Add execute permission to file.
 
-Step 3: `ls -l backup.sh`
-Why : Verify it worked. Look for: -rwxr-xr-x (notice 'x' = executable).
+- Step 3: `ls -l backup.sh`
+  Why : Verify it worked. Look for: -rwxr-xr-x (notice 'x' = executable).
 
-Step 4: `./backup.sh`
-Why : Run it.
+- Step 4: `./backup.sh`
+  Why : Run it.
