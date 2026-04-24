@@ -10,7 +10,7 @@ Create three users with home directories and passwords:
 
 **Verify:** Check `/etc/passwd` and `/home/` directory
 
-![alt text](image.png)
+![alt text](images/image.png)
 
 ---
 
@@ -22,7 +22,7 @@ Create two groups:
 
 **Verify:** Check `/etc/group`
 
-![alt text](image-1.png)
+![alt text](images/image-1.png)
 
 ---
 
@@ -35,12 +35,12 @@ Assign users:
 
 **Verify:** Use appropriate command to check group membership
 
-![alt text](image-2.png)
+![alt text](images/image-2.png)
 
 
 Trying to removing user from assigned group and added again :
 
-![alt text](image-3.png)
+![alt text](images/image-3.png)
 
 ---
 
@@ -53,7 +53,7 @@ Trying to removing user from assigned group and added again :
 
 **Verify:** Check permissions and test file creation
 
-![alt text](image-4.png)
+![alt text](images/image-4.png)
 
 ---
 
@@ -66,8 +66,8 @@ Trying to removing user from assigned group and added again :
 5. Set group to `project-team`, permissions to `775`
 6. Test by creating file as `nairobi`
 
-![alt text](image-5.png)
-![alt text](image-6.png)
+![alt text](images/image-5.png)
+![alt text](images/image-6.png)
 
 ---
 
