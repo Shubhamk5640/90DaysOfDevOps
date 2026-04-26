@@ -41,42 +41,42 @@ TCP/IP is practically used for providing communication between computers over th
 ---
 
 ## Hands-on Checklist
-- Identity: `hostname -I` (or `ip addr show`)
+- **Identity** : `hostname -I` (or `ip addr show`)
 - Observation : hostname - EC2 instance private IP is 172.31.18.81 (internal AWS VPC network),
 hostname -it shows localhost address i.e 127.0.0.1/8,
 Ethernet ip i.e 172.31.18.81/20
 
 ![alt text](images/image.png)
 
-- Reachability: `ping google.com`
+- **Reachability** : `ping google.com`
 - Observation : 0% packet loss with 4006ms average latency confirms good network connectivity.
 
 ![alt text](images/image-1.png)
 
 
-- Path: `traceroute gogle.com`
+- **Path** : `traceroute gogle.com`
 - Obervation: Successfully reached the destination at hop 20, despite timeouts (* * *) at intermediate hops (11–19) caused by network security filtering.
 
 ![alt text](images/image-2.png)
 
-- Ports: `ss -tulpn` (or `netstat -tulpn`) 
+- **Ports** : `ss -tulpn` (or `netstat -tulpn`) 
 - Obesevation: ngnix.service listening on port 80 & SSH service is listening on port 22.
 
 ![alt text](images/image-3.png)
 
 
-- Name resolution: `dig google.com`
+- **Name resolution** : `dig google.com`
 - Observation: The DNS query returned status: NOERROR and successfully resolved google.com to 6 IP addresses:  142.251.163.101,142.251.163.113,142.251.163.100,142.251.163.139,142.251.163.102 and 142.251.163.138.
 
 ![alt text](images/image-4.png)
 
-- HTTP check: `curl -I https://www.google.com`
+- **HTTP check** : `curl -I https://www.google.com`
 - Observation: Received HTTP status 301 (Moved Permanently), indicating the server is redirecting the request to https://www.google.com/
 
 ![alt text](images/image-5.png)
 
 
-- Connections snapshot: `netstat -an | head` — count ESTABLISHED vs LISTEN (rough).
+- **Connections snapshot** : `netstat -an | head` — count ESTABLISHED vs LISTEN (rough).
 - Observation: Captured 1 ESTABLISHED connection on port 22 (the active SSH session) and multiple ports in LISTEN state.
 
 ![alt text](images/image-6.png)
@@ -98,8 +98,35 @@ Ethernet ip i.e 172.31.18.81/20
 
 - If not reachable :
 
-Check service status - systemctl status ssh
+Check service status - `systemctl status ssh`
 
-Check logs - journlctl -u ssh
+Check logs - `journlctl -u ssh`
 
-Check firewall - sudo ufw status
+Check firewall - `sudo ufw status`
+
+---
+
+# Reflection
+
+- ping command gives fatest response if something is broken 
+
+- DNS fails - DNS is an application layer protocall we check application layer 
+
+    `ping ,dig , nslookup, ss -tulpn`
+
+- HTTP 500 
+    - it is an application layer protocall, 500 status code is internal server error 
+    - request reaches to the server internet is working fine but problem is in application logic 
+    - check applications logs for troubleshotting 
+        - `systemctl status service`
+        - `journalctl -u service`
+        - `tail -f /var/log/service/error.log`
+
+
+- Followups
+
+    - use telnet command to check connectivity to host server and port
+        - `telnet ip port`
+
+    - use netstat command to see a connection is established or not 
+        - `netstat -an |grep ip or port`
