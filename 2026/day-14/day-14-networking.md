@@ -108,7 +108,7 @@ Check firewall - `sudo ufw status`
 
 # Reflection
 
-- ping command gives fatest response if something is broken 
+- `ping` command gives fatest response if something is broken 
 
 - DNS fails - DNS is an application layer protocall we check application layer 
 
