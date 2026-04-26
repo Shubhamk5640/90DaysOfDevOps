@@ -42,42 +42,42 @@ TCP/IP is practically used for providing communication between computers over th
 
 ## Hands-on Checklist
 - Identity: hostname -I (or ip addr show)
-Observation : hostname - EC2 instance private IP is 172.31.18.81 (internal AWS VPC network).
-hostname -it shows localhost address i.e 127.0.0.1/8
+- Observation : hostname - EC2 instance private IP is 172.31.18.81 (internal AWS VPC network),
+hostname -it shows localhost address i.e 127.0.0.1/8,
 Ethernet ip i.e 172.31.18.81/20
 
 ![alt text](images/image.png)
 
 - Reachability: ping google.com
-Observation : 0% packet loss with 4006ms average latency confirms good network connectivity.
+- Observation : 0% packet loss with 4006ms average latency confirms good network connectivity.
 
 ![alt text](images/image-1.png)
 
 
 - Path: traceroute gogle.com
-Obervation: Successfully reached the destination at hop 20, despite timeouts (* * *) at intermediate hops (11–19) caused by network security filtering.
+- Obervation: Successfully reached the destination at hop 20, despite timeouts (* * *) at intermediate hops (11–19) caused by network security filtering.
 
 ![alt text](images/image-2.png)
 
 - Ports: ss -tulpn (or netstat -tulpn) 
-Obesevation: ngnix.service listening on port 80 & SSH service is listening on port 22.
+- Obesevation: ngnix.service listening on port 80 & SSH service is listening on port 22.
 
 ![alt text](images/image-3.png)
 
 
 - Name resolution: dig google.com
-Observation: The DNS query returned status: NOERROR and successfully resolved google.com to 6 IP addresses:  142.251.163.101,142.251.163.113,142.251.163.100,142.251.163.139,142.251.163.102 and 142.251.163.138.
+- Observation: The DNS query returned status: NOERROR and successfully resolved google.com to 6 IP addresses:  142.251.163.101,142.251.163.113,142.251.163.100,142.251.163.139,142.251.163.102 and 142.251.163.138.
 
 ![alt text](images/image-4.png)
 
 - HTTP check: curl -I https://www.google.com
-Observation: Received HTTP status 301 (Moved Permanently), indicating the server is redirecting the request to https://www.google.com/
+- Observation: Received HTTP status 301 (Moved Permanently), indicating the server is redirecting the request to https://www.google.com/
 
 ![alt text](images/image-5.png)
 
 
 - Connections snapshot: netstat -an | head — count ESTABLISHED vs LISTEN (rough).
-Observation: Captured 1 ESTABLISHED connection on port 22 (the active SSH session) and multiple ports in LISTEN state.
+- Observation: Captured 1 ESTABLISHED connection on port 22 (the active SSH session) and multiple ports in LISTEN state.
 
 ![alt text](images/image-6.png)
 
@@ -90,13 +90,16 @@ Observation: Captured 1 ESTABLISHED connection on port 22 (the active SSH sessio
 ![alt text](images/image-7.png)
 
 2. From the same machine, test it: nc -zv localhost <port> (or curl -I http://localhost:<port>).
-    `nc -zv localhost`
+    `nc -zv localhost 22`
 
 ![alt text](images/image-8.png)
 
 3. Write one line: is it reachable? If not, what’s the next check? (e.g., service status, firewall).
 
 - If not reachable :
+
 Check service status - systemctl status ssh
+
 Check logs - journlctl -u ssh
+
 Check firewall - sudo ufw status
