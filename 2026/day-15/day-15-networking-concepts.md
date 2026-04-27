@@ -13,8 +13,9 @@
     
     - The web server processes the request, may talk to application servers and databases, 
     and then sends back the webpage you see.
+
     
-2. What are these record types? Write one line each:
+**2. What are these record types? Write one line each:**
    
 | Record Type | Purpose | Example |
 | ----------- | ------- | ------- |
@@ -25,7 +26,8 @@
 | NS          | Lists authoritative DNS servers for the domain | `example.com → ns1.example.com, ns2.example.com` |
 
    
-3. Run: `dig google.com` — identify the A record and TTL
+
+**3. Run: `dig google.com` — identify the A record and TTL**
  - Observation : 
        - Domain Name - google.com
        - TTL - Second column shows TTL (Time to Live, in seconds). 68 → cache IP for 68 seconds.
@@ -38,7 +40,7 @@
 
 ### Task 2: IP Addressing
 
-1. What is an IPv4 address? How is it structured? (e.g., 192.168.1.10)
+**1. What is an IPv4 address? How is it structured? (e.g., 192.168.1.10)**
 
 - An IP Address is a unique numerical label assigned to each device connected to a computer network that uses the Internet Protocol for communication.
 
@@ -49,18 +51,21 @@
     - Third number responsible LAN or VLAN
     - Fourth number indentifies each device individually
 
-2. Difference between public and private IPs — give one example of each
+
+**2. Difference between public and private IPs — give one example of each**
 
     - Public IP: Accessible over the internet (e.g., 8.8.8.8)
     - Private IP: Used inside local networks (e.g., 192.168.1.5)
 
-3. What are the private IP ranges?
+
+**3. What are the private IP ranges?**
 
     - 10.0.0.0 – 10.255.255.255 (Large enterprise networks)
     - 172.16.0.0 – 172.31.255.255 (Medium-sized organizations)
     - 192.168.0.0 – 192.168.255.255 (Home & small office networks)
 
-4. Run: ip addr show — identify which of your IPs are private
+
+**4. Run: ip addr show — identify which of your IPs are private**
     - 127.0.0.1/8 - Reserved for local host communication.
     - 172.31.18.81 - This is private ip address.
 
@@ -70,11 +75,12 @@
 
 ### Task 3: CIDR & Subnetting
 
-1. What does /24 mean in 192.168.1.0/24?
+**1. What does /24 mean in 192.168.1.0/24?**
 
 Answer - /24 is CIDR notation. It tells us how many bits of the IP address are used for network portion. Here first 24 bits (out of 32) are reserved for network. That leaves 8 bits for the host address. IP range : (192.168.1.0 - 192.168.1.255) Total :256 IP's
 
-2. How many usable hosts in a `/24`? A /`16`? A /`28`?
+
+**2. How many usable hosts in a `/24`? A /`16`? A /`28`?**
 Formula: Usable Hosts = 2^(32 - CIDR) - 2
 
     - /24
@@ -84,10 +90,12 @@ Formula: Usable Hosts = 2^(32 - CIDR) - 2
     - /28
         Usable IP = 16 -2 i.e (brodcast & CIDR base ip ) = 14
 
-3. Explain in your own words: why do we subnet?
+
+**3. Explain in your own words: why do we subnet?**
     * Subnet divides one large network into small, manageable and efficient sub-networks.
 
-4. Quick exercise — fill in:
+
+**4. Quick exercise — fill in:**
 
 | CIDR | Subnet Mask     | Total IPs | Usable Hosts |
 |------|-----------------|-----------|--------------|
@@ -99,11 +107,12 @@ Formula: Usable Hosts = 2^(32 - CIDR) - 2
 
 ### Task 4: Ports – The Doors to Services
 
-1. What is a port? Why do we need them?
+**1. What is a port? Why do we need them?**
     - Virtual endpoint to direct data to the correct application.
     - Multiple services can run on a single device; ports help route data correctly.
 
-2. Common Ports ; 
+
+**2. Common Ports :**
 
 | Port  | Service |
 | ----- | ------- |
@@ -115,7 +124,8 @@ Formula: Usable Hosts = 2^(32 - CIDR) - 2
 | 6379  | Redis   |
 | 27017 | MongoDB |
 
-3. Run ss -tulpn — match at least 2 listening ports to their services
+
+**3. Run ss -tulpn — match at least 2 listening ports to their services**
   * Command: ss -tulpn
   * Example: 22 → SSH, 80 → HTTP
 
@@ -125,14 +135,15 @@ Formula: Usable Hosts = 2^(32 - CIDR) - 2
 
 ### Task 5: Putting It Together
 
-1. curl http://myapp.com:8080 – networking concepts involved
+**1. curl http://myapp.com:8080 – networking concepts involved**
 
        - DNS: Resolve myapp.com → IP
        - TCP: Reliable transport layer
        - HTTP: Application protocol
        - Port 8080: Directs request to specific service
 
-2. Database connectivity issue
+
+**2. Database connectivity issue**
 
  - If app can't reach 10.0.1.50:3306:
 
@@ -143,11 +154,10 @@ Formula: Usable Hosts = 2^(32 - CIDR) - 2
 
 ---
 
-What I learned
+### What I learned
 1. DNS Resolution is the Backbone of the Internet – Domain names like google.com are translated into IP addresses through a hierarchy of caches, root/TLD, and authoritative servers, enabling browsers to connect to the right server.
 
 2. IP Addressing & Subnetting Organize Networks – Understanding public vs private IPs, CIDR notation, and subnet masks helps manage networks efficiently and calculate usable hosts.
 
 3. Ports Direct Traffic to the Right Service – Ports act as “doors” for applications; combined with IPs and protocols like TCP/HTTP, they ensure data reaches the correct service (e.g., web, database, email).
-
 
