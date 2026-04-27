@@ -2,7 +2,7 @@
 
 ## Task 1: DNS – How Names Become IPs
 
-### 1. What happens when you type `google.com` in a browser?
+**1. What happens when you type `google.com` in a browser?**
 
     - First the browser checks in local cache for the corresponding IP address.
     If not present browser will send request to DNS(Domain Name Service) requesting IP address.
