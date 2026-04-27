@@ -1,17 +1,17 @@
 # Networking Concepts: DNS, IP, Subnets & Ports
 
-### Task 1: DNS – How Names Become IPs
+## Task 1: DNS – How Names Become IPs
 
-1. What happens when you type `google.com` in a browser?
+### 1. What happens when you type `google.com` in a browser?
 
-    1- First the browser checks in local cache for the corresponding IP address.
+    - First the browser checks in local cache for the corresponding IP address.
     If not present browser will send request to DNS(Domain Name Service) requesting IP address.
     
-    2- Computer sets up a secure connection (HTTPS) with Google’s servers using TCP/IP.
+    - Computer sets up a secure connection (HTTPS) with Google’s servers using TCP/IP.
     
-    4- The request is routed through Google’s load balancers to the right web server.
+    - The request is routed through Google’s load balancers to the right web server.
     
-    4- The web server processes the request, may talk to application servers and databases, 
+    - The web server processes the request, may talk to application servers and databases, 
     and then sends back the webpage you see.
     
 2. What are these record types? Write one line each:
